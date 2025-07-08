@@ -1,0 +1,23 @@
+
+
+.linkBoton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 10px;
+}
+
+.linkBoton:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.linkBoton:active {
+  transform: scale(0.98);
+}
