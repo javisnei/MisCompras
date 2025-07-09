@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import styles from "./Principal.module.css";
 import { useState } from "react";
 import { Nuevo } from "../Nuevo/Nuevo";
 import { Productos } from "../Productos/Productos";
+import { Deseo } from "../Deseo/Deseo";
 
 export const Principal = () => {
   const [producto, setProductos] = useState([]);
@@ -20,7 +21,7 @@ export const Principal = () => {
     setProductos([...producto, NuevoProducto]);
   };
 
-    const agregarDeseo = (nombre, precio, local, garantia) => {
+  const agregarDeseo = (nombre, precio, local, garantia) => {
     const nuevoDeseo = {
       id: Date.now(),
       nombre,
@@ -30,8 +31,6 @@ export const Principal = () => {
     };
     setDeseo([...deseo, nuevoDeseo]);
   };
-
-
 
   const eliminarProducto = (id) => {
     const eliminado = producto.filter((p) => p.id !== id);
@@ -51,6 +50,10 @@ export const Principal = () => {
               EliminarProducto={eliminarProducto}
             />
           ))}
+
+          <Routes>
+            <Route path="/Deseos" element={<Deseo listaDeseos={deseo} />} />
+          </Routes>
         </div>
       </div>
     </>

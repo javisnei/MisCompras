@@ -10,30 +10,20 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
   const [local, setLocal] = useState("");
   const [garantia, setGarantia] = useState("");
 
-  const [p,setP] = useState(false);
-  const [d,setD] = useState(false);
-
-  const handleP = () => {
-    setP(!p)
-  }
-   const handleD = () => {
-    setD(!d)
-  }
-
-  const handleProducto = (e) => {
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (nombre.trim() === "") return;
-    agregarProducto(nombre, precio, local, garantia);
-    setNombre("");
-    setPrecio(0);
-    setLocal("");
-    setGarantia("");
-  };
 
-  const handleDeseo = (e) => {
-    e.preventDefault();
-    if (nombre.trim() === "") return;
-    agregarDeseo(nombre, precio, local, garantia);
+    const botonPresionado = e.nativeEvent.submitter.name;
+
+    if (botonPresionado === "compra") {
+      agregarProducto(nombre, precio, local, garantia);
+    } else if (botonPresionado === "deseo") {
+      agregarDeseo(nombre, precio, local, garantia);
+    }
+
+    // Reiniciar campos
     setNombre("");
     setPrecio(0);
     setLocal("");
@@ -42,64 +32,68 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
 
   return (
     <>
-        
-          <div className={styles.carta}>
-          
-              <form className={styles.formulario}  onSubmit= {p && !d ? handleProducto : handleDeseo}>
-                <h1>Informacion de la Compra</h1>
+      <div className={styles.carta}>
+        <form
+          className={styles.formulario}
+          onSubmit={handleSubmit}
+        >
+          <h1>Informacion de la Compra</h1>
 
-                <div className={styles.Rellenar}>
-                  <label>Nombre</label>
-                  <input
-                    className={styles.Inp}
-                    type="text"
-                    placeholder="Nombre del Producto"
-                    name="NombreProducto"
-                    onChange={(e) => setNombre(e.target.value)}
-                  />
-                </div>
-
-                <div className={styles.Rellenar}>
-                  <label>Precio</label>
-                  <input
-                    className={styles.Inp}
-                    type="number"
-                    placeholder="Precio del Producto"
-                    name="PrecioProducto"
-                    onChange={(e) => setPrecio(e.target.value)}
-                  />
-                </div>
-
-                <div className={styles.Rellenar}>
-                  <label>Local de compra</label>
-                  <input
-                    className={styles.Inp}
-                    type="text"
-                    placeholder="Local de Compra"
-                    name="LocalCompra"
-                    onChange={(e) => setLocal(e.target.value)}
-                  />
-                </div>
-
-                <div className={styles.Rellenar}>
-                  <label>Garantía</label>
-                  <input
-                    className={styles.Inp}
-                    onChange={(e) => setGarantia(e.target.value)}
-                    type="date"
-                    name="Garantia"
-                  />
-                </div>
-                <button onClick= {handleP} type="submit" className={sty.linkBoton}>
-                  Agregar Compra
-                </button>
-                
-                <button  onClick= {handleD}  type="submit"className={sty.linkBoton}>
-                  Agregar Deseo
-                </button>
-              </form>
-         
+          <div className={styles.Rellenar}>
+            <label>Nombre</label>
+            <input
+              className={styles.Inp}
+              type="text"
+              placeholder="Nombre del Producto"
+              name="NombreProducto"
+              value={nombre}
+              onChange={(e) => setNombre(e.target.value)}
+            />
           </div>
+
+          <div className={styles.Rellenar}>
+            <label>Precio</label>
+            <input
+              className={styles.Inp}
+              type="number"
+              placeholder="Precio del Producto"
+              name="PrecioProducto"
+              value={precio}
+              onChange={(e) => setPrecio(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.Rellenar}>
+            <label>Local de compra</label>
+            <input
+              className={styles.Inp}
+              type="text"
+              placeholder="Local de Compra"
+              name="LocalCompra"
+              value={local}
+              onChange={(e) => setLocal(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.Rellenar}>
+            <label>Garantía</label>
+            <input
+              className={styles.Inp}
+              onChange={(e) => setGarantia(e.target.value)}
+              type="date"
+              name="Garantia"
+              value={garantia}
+            />
+          </div>
+          <button type="submit" name="compra" className={sty.linkBoton}>
+            Agregar Compra
+          </button>
+
+          <button type="submit" name="deseo" className={sty.linkBoton}>
+            Agregar Deseo
+          </button>
+        </form>
+      </div>
     </>
   );
 };
