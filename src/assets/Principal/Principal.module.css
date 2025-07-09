@@ -1,4 +1,14 @@
+.formulario
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.conteiner
+{
+  display: flex;
+}
 
 .linkBoton {
   display: inline-block;
@@ -20,4 +30,38 @@
 
 .linkBoton:active {
   transform: scale(0.98);
+}
+
+
+.cajon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Se toma toda la altura de la pantalla */
+}
+
+.caja {
+  width: 300px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lista {
+  max-height: 300px;  /* Limita la altura para habilitar la barra de desplazamiento */
+  overflow-y: auto;   /* Añade la barra de desplazamiento si el contenido excede la altura */
+  margin-top: 15px;
+}
+
+.item {
+  padding: 10px;
+  background-color: #e1e1e1;
+  margin: 5px 0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: #ccc;
 }

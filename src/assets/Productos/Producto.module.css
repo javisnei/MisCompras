@@ -1,0 +1,42 @@
+.carta {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  margin: 2px;
+  height: 200px;
+}
+
+.dato {
+  display: flex;
+  flex-wrap: wrap;  /* Permite que los elementos se ajusten cuando sea necesario */
+  margin-bottom: 15px;
+}
+
+.titulo {
+  font-weight: bold;
+  margin-right: 10px; /* Espacio entre el título y el valor */
+  min-width: 80px; /* Esto asegura que el título tenga un ancho mínimo para que siempre quede alineado */
+}
+
+.botones {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}

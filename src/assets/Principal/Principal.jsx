@@ -7,7 +7,7 @@ import { Productos } from "../Productos/Productos";
 export const Principal = () => {
   const [producto, setProductos] = useState([]);
 
-  //const [deseo, setDeseo] = useState([]);
+  const [deseo, setDeseo] = useState([]);
 
   const AgregarProducto = (nombre, precio, local, garantia) => {
     const NuevoProducto = {
@@ -20,51 +20,39 @@ export const Principal = () => {
     setProductos([...producto, NuevoProducto]);
   };
 
-  const eliminarProducto = (id) => {
-    const eliminado = producto.filter((p) => p.id !== id );
-    setProductos(eliminado);
+    const agregarDeseo = (nombre, precio, local, garantia) => {
+    const nuevoDeseo = {
+      id: Date.now(),
+      nombre,
+      precio,
+      local,
+      garantia,
+    };
+    setDeseo([...deseo, nuevoDeseo]);
   };
 
-  const [agregar, setAgregar] = useState(false);
-  const handleNuevo = () => {
-    //poder mostrar el formulario para agregar nuevo producto
-    setAgregar(true);
+
+
+  const eliminarProducto = (id) => {
+    const eliminado = producto.filter((p) => p.id !== id);
+    setProductos(eliminado);
   };
 
   return (
     <>
-      <nav>
-        {agregar ? (
-          <Link onClick={handleNuevo} className={styles.linkBoton} to="/Nuevo">
-            Nuevo
-          </Link>
-        ) : (
-          <Link onClick={handleNuevo} className={styles.linkBoton} to="/">
-            Nuevo
-          </Link>
-        )}
-          
-        <Link className={styles.linkBoton} to="/Deseos">
-          Deseos
-        </Link>
-      </nav>
+      <div className={styles.conteiner}>
+        <Nuevo agregarProducto={AgregarProducto} agregarDeseo={agregarDeseo} />
 
-       <Nuevo  AgregarProducto = {AgregarProducto}/> 
-
-
-       <hr></hr>
-
-       {
-        producto.map((p) => (
-          <Productos
-            key = {p.id}
-            prod = {p}
-            EliminarProducto = {eliminarProducto}
-
-          />
-        ))
-       }
-      
+        <div className={styles.cajon}>
+          {producto.map((p) => (
+            <Productos
+              key={p.id}
+              producto={p}
+              EliminarProducto={eliminarProducto}
+            />
+          ))}
+        </div>
+      </div>
     </>
   );
 };
