@@ -1,46 +1,18 @@
-import { Link, Route, Routes } from "react-router-dom";
+
 import styles from "./Principal.module.css";
-import { useState } from "react";
 import { Nuevo } from "../Nuevo/Nuevo";
 import { Productos } from "../Productos/Productos";
-import { Deseo } from "../Deseo/Deseo";
 
-export const Principal = () => {
-  const [producto, setProductos] = useState([]);
-
-  const [deseo, setDeseo] = useState([]);
-
-  const AgregarProducto = (nombre, precio, local, garantia) => {
-    const NuevoProducto = {
-      id: Date.now(),
-      nombre,
-      precio,
-      local,
-      garantia,
-    };
-    setProductos([...producto, NuevoProducto]);
-  };
-
-  const agregarDeseo = (nombre, precio, local, garantia) => {
-    const nuevoDeseo = {
-      id: Date.now(),
-      nombre,
-      precio,
-      local,
-      garantia,
-    };
-    setDeseo([...deseo, nuevoDeseo]);
-  };
-
-  const eliminarProducto = (id) => {
-    const eliminado = producto.filter((p) => p.id !== id);
-    setProductos(eliminado);
-  };
+export const Principal = ( {producto,
+  agregarProducto,
+  agregarDeseo,
+  eliminarProducto}) => {
+  
 
   return (
     <>
       <div className={styles.conteiner}>
-        <Nuevo agregarProducto={AgregarProducto} agregarDeseo={agregarDeseo} />
+        <Nuevo agregarProducto={agregarProducto} agregarDeseo={agregarDeseo} />
 
         <div className={styles.cajon}>
           {producto.map((p) => (
@@ -51,9 +23,6 @@ export const Principal = () => {
             />
           ))}
 
-          <Routes>
-            <Route path="/Deseos" element={<Deseo listaDeseos={deseo} />} />
-          </Routes>
         </div>
       </div>
     </>

@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import styles from "./Nuevo.module.css";
 import sty from "../Principal/Principal.module.css";
-import { Productos } from "../Productos/Productos";
-import { Principal } from "../Principal/Principal";
 
 export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
   const [nombre, setNombre] = useState("");
@@ -13,14 +11,16 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (nombre.trim() === "") return;
+    if (nombre.trim() === "" ) return  alert("Falta rellenar Nombre o Precio");
 
     const botonPresionado = e.nativeEvent.submitter.name;
 
     if (botonPresionado === "compra") {
       agregarProducto(nombre, precio, local, garantia);
+      alert("AÑADIDO CORRECTAMENTE A PRODUCTOS");
     } else if (botonPresionado === "deseo") {
       agregarDeseo(nombre, precio, local, garantia);
+      alert("AÑADIDO CORRECTAMENTE A DESEOS");
     }
 
     // Reiniciar campos

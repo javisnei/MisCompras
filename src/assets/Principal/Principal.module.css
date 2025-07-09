@@ -4,10 +4,41 @@
   justify-content: center;
   align-items: center;
 }
+.cajon {
+  max-height: 500px;
+  padding: 10px;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  overflow-y: auto;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  width: 800px;
+}
+
+.cajon::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cajon::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.cajon::-webkit-scrollbar-track {
+  background-color: transparent;
+}
 
 .conteiner
 {
   display: flex;
+  background-color: blueviolet;
+  height: 550px;
 }
 
 .linkBoton {
@@ -34,10 +65,7 @@
 
 
 .cajon {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Se toma toda la altura de la pantalla */
+ /* Se toma toda la altura de la pantalla */
 }
 
 .caja {
