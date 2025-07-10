@@ -13,7 +13,7 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
       alert("Falta rellenar Nombre ");
       return;
     }
-    if (precio <= 0) {
+    if (precio < 0) {
       alert("⚠️ El precio debe ser un número positivo.");
       return;
     }
