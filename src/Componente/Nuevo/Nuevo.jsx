@@ -6,20 +6,25 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
   const [nombre, setNombre] = useState("");
   const [precio, setPrecio] = useState(0);
   const [local, setLocal] = useState("");
-  const [garantia, setGarantia] = useState("");
 
-  
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (nombre.trim() === "" ) return  alert("Falta rellenar Nombre o Precio");
+    if (nombre.trim() === "") {
+      alert("Falta rellenar Nombre ");
+      return;
+    }
+    if (precio <= 0) {
+      alert("⚠️ El precio debe ser un número positivo.");
+      return;
+    }
 
     const botonPresionado = e.nativeEvent.submitter.name;
 
     if (botonPresionado === "compra") {
-      agregarProducto(nombre, precio, local, garantia);
+      agregarProducto(nombre, precio, local);
       alert("AÑADIDO CORRECTAMENTE A PRODUCTOS");
     } else if (botonPresionado === "deseo") {
-      agregarDeseo(nombre, precio, local, garantia);
+      agregarDeseo(nombre, precio, local);
       alert("AÑADIDO CORRECTAMENTE A DESEOS");
     }
 
@@ -27,16 +32,12 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
     setNombre("");
     setPrecio(0);
     setLocal("");
-    setGarantia("");
   };
 
   return (
     <>
       <div className={styles.carta}>
-        <form
-          className={styles.formulario}
-          onSubmit={handleSubmit}
-        >
+        <form className={styles.formulario} onSubmit={handleSubmit}>
           <h1>Informacion de la Compra</h1>
 
           <div className={styles.Rellenar}>
@@ -75,16 +76,6 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
             />
           </div>
 
-          <div className={styles.Rellenar}>
-            <label>Garantía</label>
-            <input
-              className={styles.Inp}
-              onChange={(e) => setGarantia(e.target.value)}
-              type="date"
-              name="Garantia"
-              value={garantia}
-            />
-          </div>
           <button type="submit" name="compra" className={sty.linkBoton}>
             Agregar Compra
           </button>

@@ -1,5 +1,5 @@
 
-import { Inicio } from "./assets/Inicio/Inicio";
+import { Inicio } from "./Componente/Inicio/Inicio";
 
 function App() {
   return (

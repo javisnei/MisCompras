@@ -1,0 +1,40 @@
+.historial {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.grupoMes {
+  margin-bottom: 20px;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tituloMes {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed #ccc;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.fecha {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.nombre {
+  font-weight: bold;
+  color: #222;
+}
