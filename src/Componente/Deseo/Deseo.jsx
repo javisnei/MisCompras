@@ -23,12 +23,13 @@ export const Deseo = ({
   };
 
   return (
-    <div className={styles.contenedor}>
-      {listaDeseos.length === 0 ? (
+    <>
+     {listaDeseos.length === 0 ? (
         <p>No hay deseos aún</p>
       ) : (
         <p>LISTA DE DESEO </p>
       )}
+    <div className={styles.contenedor}>    
 
       {editar ? (
         <ActualizarDeseo
@@ -80,5 +81,6 @@ export const Deseo = ({
         ))
       )}
     </div>
+    </>
   );
 };

@@ -18,6 +18,15 @@ export const Historial = ({ historial }) => {
 
   return (
     <div className={styles.historial}>
+
+
+      {historial.length === 0 ? (
+        <p>No hay Historial en el Momento </p>
+      ) : (
+        <p>Historial</p>
+      )}
+
+      
       {[...grupos.entries()].map(([mes, items]) => (
         <div key={mes} className={styles.grupoMes}>
           <h2 className={styles.tituloMes}>{mes}</h2>

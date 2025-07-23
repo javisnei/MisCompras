@@ -73,50 +73,57 @@ export const Inicio = () => {
   return (
     <div className={styles.bloque}>
       <div className={styles.Menu}>
-        <Link className={styles.enlace} to="/">
-          Mis Compras
-        </Link>
-        <Link className={styles.enlace} to="/Historial">
-          Historial
-        </Link>
-        <Link className={styles.enlace} to="/Deseos">
-          Mis Deseos
-        </Link>
-        <div className={styles.imagen}>
-          <img src="https://res.cloudinary.com/dbfpjsjym/image/upload/v1750986023/samples/coffee.jpg" />
-        </div>
+        <>
+          <div className={styles.imagen}>
+            <img src="https://res.cloudinary.com/dbfpjsjym/image/upload/v1753299895/deseo_un_logo_para_un_sitio_de_registro_de_compras_notas_agradable_para_todo_publico_gracioas_yd2qdq.jpg" />
+          </div>
+          <Link className={styles.enlace} to="/">
+            Mis Compras
+          </Link>
+          <Link className={styles.enlace} to="/Historial">
+            Historial
+          </Link>
+          <Link className={styles.enlace} to="/Deseos">
+            Mis Deseos
+          </Link>
+          <div className={styles.imagen}>
+            <img src="https://res.cloudinary.com/dbfpjsjym/image/upload/v1753299895/deseo_un_logo_para_un_sitio_de_registro_de_compras_notas_agradable_para_todo_publico_gracioas_yd2qdq.jpg" />
+          </div>
+        </>
       </div>
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <Principal
-              producto={producto}
-              agregarProducto={agregarProducto}
-              agregarDeseo={agregarDeseo}
-              eliminarProducto={eliminarProducto}
-              actualizarProducto={actualizarProducto}
-            />
-          }
-        />
-        <Route
-          path="/Deseos"
-          element={
-            <Deseo
-              listaDeseos={deseo}
-              eliminarDeseo={eliminarDeseo}
-              actualizarDeseo={actualizarDeseo}
-              agregarProducto={agregarProducto}
-            />
-          }
-        />
+      <div className={styles.contenido}>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Principal
+                producto={producto}
+                agregarProducto={agregarProducto}
+                agregarDeseo={agregarDeseo}
+                eliminarProducto={eliminarProducto}
+                actualizarProducto={actualizarProducto}
+              />
+            }
+          />
+          <Route
+            path="/Deseos"
+            element={
+              <Deseo
+                listaDeseos={deseo}
+                eliminarDeseo={eliminarDeseo}
+                actualizarDeseo={actualizarDeseo}
+                agregarProducto={agregarProducto}
+              />
+            }
+          />
 
-        <Route
-          path="/Historial"
-          element={<Historial historial={historial} />}
-        />
-      </Routes>
+          <Route
+            path="/Historial"
+            element={<Historial historial={historial} />}
+          />
+        </Routes>
+      </div>
     </div>
   );
 };

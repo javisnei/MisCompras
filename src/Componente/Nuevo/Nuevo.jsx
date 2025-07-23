@@ -37,43 +37,39 @@ export const Nuevo = ({ agregarProducto, agregarDeseo }) => {
   return (
     <>
       <div className={styles.carta}>
+       
         <form className={styles.formulario} onSubmit={handleSubmit}>
-          <h1>Informacion de la Compra</h1>
+           <label>Informacion de la Compra</label>
+          <div className={styles.cont}>
+            <div className={styles.etiqueta}>
+              <span>Nombre</span>
+              <span>Precio</span>
+              <span>Local de compra</span>
+            </div>
 
-          <div className={styles.Rellenar}>
-            <label>Nombre</label>
-            <input
-              className={styles.Inp}
-              type="text"
-              placeholder="Nombre del Producto"
-              name="NombreProducto"
-              value={nombre}
-              onChange={(e) => setNombre(e.target.value)}
-            />
-          </div>
-
-          <div className={styles.Rellenar}>
-            <label>Precio</label>
-            <input
-              className={styles.Inp}
-              type="number"
-              placeholder="Precio del Producto"
-              name="PrecioProducto"
-              value={precio}
-              onChange={(e) => setPrecio(e.target.value)}
-            />
-          </div>
-
-          <div className={styles.Rellenar}>
-            <label>Local de compra</label>
-            <input
-              className={styles.Inp}
-              type="text"
-              placeholder="Local de Compra"
-              name="LocalCompra"
-              value={local}
-              onChange={(e) => setLocal(e.target.value)}
-            />
+            <div >
+              <input
+                type="text"
+                placeholder="Nombre del Producto"
+                name="NombreProducto"
+                value={nombre}
+                onChange={(e) => setNombre(e.target.value)}
+              />
+              <input
+                type="number"
+                placeholder="Precio del Producto"
+                name="PrecioProducto"
+                value={precio}
+                onChange={(e) => setPrecio(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Local de Compra"
+                name="LocalCompra"
+                value={local}
+                onChange={(e) => setLocal(e.target.value)}
+              />
+            </div>
           </div>
 
           <button type="submit" name="compra" className={sty.linkBoton}>

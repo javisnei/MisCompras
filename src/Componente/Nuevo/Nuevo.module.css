@@ -2,19 +2,52 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f2f6fc;
+  background: #3673ce;
   padding: 20px;
 }
+.cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
 
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+label{
+  font-size: xx-large;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-bottom: 20px;
+}
+input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.3s, box-shadow 0.3s;
+  font-size: 14px;
+}
+
+span {
+   padding: 10px 12px;
+  display: block;
+  margin-bottom: 6px;
+  color: #333;
+  font-weight: 500;
+}
 
 .carta {
   background: #ffffff;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
+
+  width: 360px;
   margin: 20px;
+  height: 250px;
 }
 
 .info {
@@ -25,15 +58,4 @@
   text-align: center;
 }
 
-.Inp
-{
-    margin-left: 10px;
-}
 
-.Rellenar 
-{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: bold;
-    font-size: 20px;
-    margin: 20px;
-}

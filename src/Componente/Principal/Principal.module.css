@@ -1,5 +1,4 @@
-.formulario
-{
+.formulario {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,11 +13,11 @@
   flex-wrap: wrap;
   gap: 10px;
   overflow-y: auto;
-    display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 10px;
-  width: 800px;
+  width: 850px;
 }
 
 .cajon::-webkit-scrollbar {
@@ -34,11 +33,11 @@
   background-color: transparent;
 }
 
-.conteiner
-{
+.conteiner {
   display: flex;
-  background-color: blueviolet;
+  background-color: #888;
   height: 550px;
+  border-radius: 8px;
 }
 
 .linkBoton {
@@ -64,10 +63,6 @@
 }
 
 
-.cajon {
- /* Se toma toda la altura de la pantalla */
-}
-
 .caja {
   width: 300px;
   background: #f9f9f9;
@@ -77,8 +72,8 @@
 }
 
 .lista {
-  max-height: 300px;  /* Limita la altura para habilitar la barra de desplazamiento */
-  overflow-y: auto;   /* Añade la barra de desplazamiento si el contenido excede la altura */
+  max-height: 300px; /* Limita la altura para habilitar la barra de desplazamiento */
+  overflow-y: auto; /* Añade la barra de desplazamiento si el contenido excede la altura */
   margin-top: 15px;
 }
 

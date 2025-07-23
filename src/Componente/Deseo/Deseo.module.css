@@ -6,6 +6,11 @@
   justify-content: center;
 }
 
+p{
+  font-size: 40px;
+  margin: 0%;
+}
+
 .carta {
   background-color: white;
   border-radius: 20px;
@@ -13,6 +18,7 @@
   padding: 20px;
   width: 200px;
   font-family: Arial, sans-serif;
+  border: 2px solid #3498db; 
 }
 
 .linea {

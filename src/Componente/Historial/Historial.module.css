@@ -3,6 +3,10 @@
   font-family: Arial, sans-serif;
 }
 
+p{
+  font-size: 40px;
+}
+
 .grupoMes {
   margin-bottom: 20px;
   background-color: #f8f8f8;

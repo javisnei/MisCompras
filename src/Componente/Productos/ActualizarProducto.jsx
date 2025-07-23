@@ -41,45 +41,41 @@ export const ActualizarProducto = ({
 
   return (
     <>
+     
       <div className={styles.carta}>
         <form className={styles.formulario} onSubmit={handleSave}>
-          <h1>Informacion de la Compra</h1>
-
-          <div className={styles.Rellenar}>
-            <label>Nombre</label>
-            <input
-              className={styles.Inp}
-              type="text"
-              placeholder="Nombre del Producto"
-              name="nombre"
-              value={compra.nombre}
+          <label>Informacion de la Compra</label>
+              <div className={styles.cont}>
+                <div className={styles.etiqueta}>
+                  <span>Nombre</span>
+                  <span>Precio</span>
+                  <span>Local de compra</span>
+                </div>
+    
+                <div >
+                  <input
+                    type="text"
+                    placeholder="Nombre del Producto"
+                    name="NombreProducto"
+                    value={compra.nombre}
+                    onChange={handleChange}
+                  />
+                  <input
+                    type="number"
+                    placeholder="Precio del Producto"
+                    name="PrecioProducto"
+                    value={compra.precio}
               onChange={handleChange}
-            />
-          </div>
-
-          <div className={styles.Rellenar}>
-            <label>Precio</label>
-            <input
-              className={styles.Inp}
-              type="number"
-              placeholder="Precio del Producto"
-              name="precio"
-              value={compra.precio}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Local de Compra"
+                    name="LocalCompra"
+                   value={compra.local}
               onChange={handleChange}
-            />
-          </div>
-
-          <div className={styles.Rellenar}>
-            <label>Local de compra</label>
-            <input
-              className={styles.Inp}
-              type="text"
-              placeholder="Local de Compra"
-              name="local"
-              value={compra.local}
-              onChange={handleChange}
-            />
-          </div>
+                  />
+                </div>
+              </div>
 
           <button type="submit" className={sty.linkBoton}>
             Actualizar

@@ -20,49 +20,44 @@ export const ActualizarDeseo = ( {deseo , setEditar,setDeseo,actualizarDeseo} ) 
 
   return (
     <>
+   
         <div className={styles.carta}>
                 <form
                   className={styles.formulario}
                   onSubmit={handleSave}
                 >
-                  <h1>Informacion de la Compra</h1>
-        
-                  <div className={styles.Rellenar}>
-                    <label>Nombre</label>
-                    <input
-                      className={styles.Inp}
-                      type="text"
-                      placeholder="Nombre del Producto"
-                      name="NombreProducto"
-                      value={deseo.nombre}
+                  <label>Informacion de la Compra</label>
+              <div className={styles.cont}>
+                <div className={styles.etiqueta}>
+                  <span>Nombre</span>
+                  <span>Precio</span>
+                  <span>Local de compra</span>
+                </div>
+    
+                <div >
+                  <input
+                    type="text"
+                    placeholder="Nombre del Producto"
+                    name="NombreProducto"
+                     value={deseo.nombre}
                       onChange={(e) => setDeseo({...deseo, nombre:e.target.value})}
-
-                    />
-                  </div>
-        
-                  <div className={styles.Rellenar}>
-                    <label>Precio</label>
-                    <input
-                      className={styles.Inp}
-                      type="number"
-                      placeholder="Precio del Producto"
-                      name="PrecioProducto"
-                      value={deseo.precio}
+                  />
+                  <input
+                    type="number"
+                    placeholder="Precio del Producto"
+                    name="PrecioProducto"
+                    value={deseo.precio}
                       onChange={(e) => setDeseo({...deseo, precio:e.target.value})}
-                    />
-                  </div>
-        
-                  <div className={styles.Rellenar}>
-                    <label>Local de compra</label>
-                    <input
-                      className={styles.Inp}
-                      type="text"
-                      placeholder="Local de Compra"
-                      name="LocalCompra"
-                      value={deseo.local}
+                  />
+                  <input
+                    type="text"
+                    placeholder="Local de Compra"
+                    name="LocalCompra"
+                   value={deseo.local}
                       onChange={(e) => setDeseo({...deseo, local:e.target.value})}
-                    />
-                  </div>
+                  />
+                </div>
+              </div>
         
                   <button type="submit" name="compra" className={sty.linkBoton}>
                     Actualizar
