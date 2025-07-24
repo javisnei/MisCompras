@@ -3,6 +3,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Principal } from "../Principal/Principal";
 import { Deseo } from "../Deseo/Deseo";
 
+//import { createTask, deleteTask, updateTask } from "./api/purchase"; //usar el backend  
+
+
 import styles from "./Inicio.module.css";
 import { Historial } from "../Historial/Historial";
 
@@ -37,7 +40,16 @@ export const Inicio = () => {
     };
     setProductos([...producto, nuevo]);
     SetHistorial([...historial, nuevo]);
+/**
+    const response = await createPurchase(nuevo);
+    console.log("Respuesta de crear tarea:", response.data);
+    if (response.data) {
+      getTareas(); // Actualiza la lista de tareas
+    } else {
+      console.error("Error al crear la tarea:", response.error);
+    }  */
   };
+ 
 
   const actualizarProducto = (id, nombre, precio, local) => {
     const actualizadas = producto.map((t) =>
